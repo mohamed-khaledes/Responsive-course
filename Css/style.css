@@ -1,0 +1,562 @@
+/*
+    Css units
+    .px
+    .em  =>  time 
+    .rem => Root time
+    .percentage
+    .vw => view port width
+    .vh => view port height
+*/
+/* media quary gives your any size you want dont excute the special width like bootstrap*/
+@media (max-width: 420px) {
+  /*small screen*/ /*custom media not found in Bootstrap*/
+  h1 {
+    margin-top: 15px !important;
+    font-size: 50px !important;
+  }
+}
+
+/*Start global rouls*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:root{
+    --main-transition:0.3s;
+}
+/*End global rouls*/ 
+body { 
+    padding: 0;
+    margin: 0;
+    font-family: 'cairo';
+}
+/* Start navbar */
+nav{
+    position:absolute;
+    z-index: 1;
+    width: 100%;
+    padding:12px;
+    border-bottom: 2px solid #fff;
+}
+nav ul li{
+    position: relative;
+    display: inline-block;
+    margin-right:80px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    transition: var(--main-transition);
+}
+nav ul li::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #03a9f4;
+    bottom: -14px;
+    left: 0;
+    transition:var(--main-transition);
+}
+nav ul li:hover{
+    color: #03a9f4;
+}
+nav ul li:hover::after{
+    width: 100%;
+}
+@media (max-width:991px) {
+    nav{
+        border: none;
+        margin-top: 40px;
+        background: #0000007a;
+        padding:0px;
+        transition: var(--main-transition);
+        height: 0;
+        overflow: hidden;
+    }
+    nav ul li{
+        display: block;
+        margin-bottom:20px ;
+        width: fit-content;
+    }
+}
+.navDis{
+    height: auto;
+    padding: 30px;
+}
+.display{
+    position: absolute;
+    z-index: 1;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    background: #00000087;
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: none;
+    margin: 5px;
+}
+/* End navbar */
+/* start header*/
+header {
+    min-height: 500px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    position: relative;
+    background-image: url(../imags/shuffle-06.jpg);
+}
+header .container{
+    margin: 100px auto 0;
+}
+header .overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: rgba(4, 113, 163, 0.877);
+    position: absolute;
+}
+header .overlay h1 {
+    font-size: 50px;
+}
+.parent-plan {
+    gap: 15px;
+    display: flex;
+}
+.overlay .plan {
+    width: 50%;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 3px solid white;
+    transition: 0.3s;
+    border-radius: 10px;
+    font-size: 20px;
+  /* float: left; */
+}
+.plan:hover{
+    background-color: white;
+    color:rgba(4, 113, 163, 0.877);
+}
+@media (max-width: 767px) {
+    /* float: none; */
+.header .overlay .parent-plan {
+    flex-direction: column;
+    align-items: center;
+    font-size: 22px;
+}
+}
+.overlay .order {
+    border: 3px solid white;
+    width: 100%;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin: 20px auto;
+    transition: 0.3s;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.order:hover{
+    background-color: white;
+    color:rgba(4, 113, 163, 0.877);
+}
+/* end header*/
+
+/* start features */
+/* .features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px , 1fr));
+} */
+.features{
+    padding: 30px;
+}
+.features .h1{
+    color: #555;
+}
+.features .feat{
+    color: #555;
+    padding:20px;
+    position: relative;
+}
+.features .feat h2{
+    margin: 10px 0;
+}
+.features .feat p{
+    margin: 0;
+    line-height: 1.7;
+}
+.features .feat::after{
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background-color: #eeeeee6e;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+.features .feat:hover::after{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 767px){
+    .feat {
+        text-align: center;
+    }
+}
+@media (min-width:768px)and (max-width:991px) {
+    .feat:first-of-type{
+        width: 100%;
+    }
+    .feat:not(:first-of-type){
+        width: 50%;
+    }
+}
+@media (min-width:992px) {
+    .feat{
+        width: calc(100% / 3);
+    }
+}
+/* end features */
+
+/* Start .about-us */
+.about-us{
+    background-color: #eee;
+    margin: 100px 0;
+    padding: 20px;
+}
+.about-us .h1{
+    font-size: 50px;
+    margin: 0;
+}
+.about-us .responsive-paragraph{
+    font-size:22px;
+    color: #848484;
+}
+/* End .about-us */
+/*Start our-works*/
+.our-works .h1{
+    margin: 0;
+}
+.our-works .image{
+    width:20%;
+}
+@media (min-width:1200px) {
+    .our-works .image{
+        width: calc(100% / 4);
+    }
+}
+@media (min-width:992px)and (max-width:1199px) {
+    .our-works .image{
+        width: calc(100% / 3);
+    }
+}
+@media (min-width:768px)and (max-width:991px) {
+    .our-works .image{
+        width: calc(100% / 2);
+    }
+}
+@media (max-width:767px) {
+    .our-works .image{
+        width:100%;
+    }
+}
+.our-works .parent-btn{
+    padding: 20px;
+}
+.our-works .btn{
+    padding: 5px 10px;
+    background-color: rgba(4, 113, 163, 0.877);
+    color: white;
+    font-size: 20px;
+    font-weight:500;
+    border: none;
+    border-radius: 5px;
+    margin: auto;
+    transition: 0.3s;
+}
+.our-works .btn:hover{
+    background-color: white;
+    color: rgba(4, 113, 163, 0.877);
+}
+/*End our-works*/
+/*Strat pricing table*/
+.pricing-table{
+    margin-top: 50px;
+    background-color:#444;
+    color: #fff;
+    padding: 50px 0;
+    position: relative;
+}
+.pricing-table .h1{
+    margin: 0;
+    font-size: 50px;
+}
+.pricing-table .pricing-plan{
+    position: relative;
+}
+.pricing-plan li{
+    margin-bottom: 8px;
+}
+.pricing-plan span{
+    font-size: 25px;
+    font-weight: 600;
+}
+@media (max-width:767px) { /*mobil*/
+    .pricing-plan {
+        width: 100%;
+    }
+}
+@media (min-width:768px) { /*small*/
+    .pricing-plan {
+        width: 100%;
+    }
+}
+@media (min-width:992px) { /*medium*/
+    .pricing-plan {
+        width:calc(100% /3);
+    }
+    .pricing-plan.Premiun{
+        right:33.6666%;
+    }
+    .pricing-plan.Plus{
+        left:33.6666%;
+    }
+}
+/*End pricing table*/
+/*Start whate they say*/
+.they-say{
+    padding: 50px 0;
+}
+.person-say .avatar{
+    width: 100px;
+    margin-right: 20px;
+}
+@media (min-width:768px)and (max-width:991px) {
+    .person-say .avatar{
+        float: none;
+        margin: auto;
+    }
+    .person-say .info{
+        width: 100%;
+        text-align: center;
+    }
+}
+@media (min-width:992px) {
+    .they-say .person-say .info{
+        width: calc(100% - 120px);
+    }
+}
+.they-say .h1{
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+.they-say .person-say{
+    background: #eeee;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px 0px #848484;
+    margin-bottom: 40px;
+}
+.they-say .person-say h3{
+    margin: 0;
+}
+.they-say .person-say.Ahmed{
+    width: 100%;
+}
+@media (max-width:767px) { /*mobil*/
+    .person-say{
+        width: 100%;
+    }
+    .person-say .avatar{
+        float: none;
+        margin: auto;
+    }
+    .person-say .info{
+        width: 100%;
+        text-align: center;
+    }
+}
+@media (min-width:768px) { /*from small to large*/
+    .person-say:not(.Ahmed){
+        width:48%;
+        margin: 0 1%;
+    }
+}
+/*End whate they say*/
+/* Start information */
+.information{
+    background-color: #eee;
+    margin: 100px 0;
+    padding: 20px;
+}
+.information .h1{
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+.information .responsive-paragraph{
+    font-size:22px;
+    color: #848484;
+}
+.information .info-list li:first-child{
+    border-top-left-radius: 5px;
+}
+.information .info-list li:last-child{
+    border-top-right-radius: 5px;
+}
+.information .info-list li{
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #ddd;
+    font-size: 18px;
+    cursor: pointer;
+}
+@media (max-width:767px) {
+    .information .info-list li{
+        display: block;
+        text-align: center;
+        margin-bottom: 7px;
+    }
+}
+.information .info-list li.active{
+    background-color: #fff;
+    color:#2196f3;
+    font-weight: bold;
+}
+.information .info-content > div{
+    padding: 10px ;
+    background-color: #fff;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: none;
+}
+.information .info-content .disArticle{
+    display: block;
+}
+/* End information */
+/* Start footer */
+.footer{
+    background-color:#444;
+    color: #eee;
+    text-align: center;
+}
+footer .copyright,
+footer .design{
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+@media (max-width:767px) {
+    .footer .copyright,
+    .footer .design{
+        width: 100%;
+        padding: 10px;
+    }
+}
+@media (min-width:768px) {
+    .footer .copyright,
+    .footer .design{
+        width: 50%;
+        padding: 20px;
+    }
+}
+/* End footer */
+/*Start global media*/
+@media (max-width: 767px) { /* mobile Screen*/
+    .visible-xs {
+    display: block !important;
+}
+.hidden-xs{
+    display: none !important;
+}
+.responsive-paragraph{
+    text-align: center;
+    font-size: 18px;
+}
+}
+@media (min-width: 768px) and (max-width:991px) {   /*small screeen*/
+    .container {
+    width: 750px;
+}
+    .visible-sm {
+    display: block !important;
+}
+.hidden-sm{
+    display: none !important;
+}
+}
+@media (min-width: 992px) and (max-width: 1199px) {   /* medium screen  */
+
+    .container {
+    width: 970px;
+}
+    .visible-md {
+    display: block !important;
+}
+}
+@media (min-width: 1200px) {   /* large screen*/
+    .container {
+    width: 1170px;
+    }
+    .visible-lg {
+    display: block !important;
+    }
+}
+/*End global media*/
+/* Start my framework */
+.container {
+    margin: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.text-center {
+    text-align: center;
+}
+.clearFix{
+    clear: both;
+}
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg {
+    display: none;
+}
+
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+.h1{
+    font-size: 2.5em;
+}
+.responsive-paragraph{
+    line-height: 1.8;
+}
+.responsive-image{
+    width: 100%;
+}
+.clasic-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.image-circle{
+    border-radius:50%;
+}
+.image-thumbnail{
+    padding: 3px;
+    background-color: #fff;
+    border:1px solid #848484;
+    box-shadow: 3px 3px 2px 0px #848484;
+}
+/* End my framework */
+
